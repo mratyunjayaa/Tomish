@@ -1,3 +1,0 @@
-const SCRIPT_WEBHOOK_URL = import.meta.env.VITE_SCRIPT_WEBHOOK;
-
-console.log(SCRIPT_WEBHOOK_URL);
