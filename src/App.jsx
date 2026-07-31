@@ -1,11 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import { MainLayout } from "./layouts/MainLayout";
 import { HomePage } from "./pages/HomePage";
-import { StatsBar } from "./pages/StateBar";
-import { ProcessTimeline } from "./pages/ProcessTimeline"; 
+import { ProcessTimeline } from "./pages/ProcessTimeLine";
 import { FounderSection } from "./pages/FounderSection";
 import { FeatureSection } from "./pages/FeatureSection";
-import { TestimonialsSection } from "./pages/TestimonialsSection";
 import { ServicesSection } from "./components/ServicesSection";
 import { ContactForm } from "./components/ContactForm";
 
