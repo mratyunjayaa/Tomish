@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0a61af;
+  --color-accent: #4381b0;
+  --color-secondary: #b9d7ea;
+  --color-app-bg: #769fcd;
+
+--font-sans: "Neue Montreal", sans-serif;
+--font-serif: "Ivar Display", serif;
+--font-mono: "JetBrains Mono", monospace;
+}
+
+/* 1. Force Root Elements to be Transparent */
+html, 
+body, 
+#root {
+  margin: 0;
+  padding: 0;
+  background-color: transparent !important;
+  background: transparent !important;
+  min-height: 100vh;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* 2. Video Styling */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-container {
+  position: relative;
+  min-height: 100vh;
+  background: transparent !important; 
+}
