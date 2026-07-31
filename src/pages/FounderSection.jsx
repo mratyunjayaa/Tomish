@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export function FounderSection() {
+export default function FounderSection() {
   return (
     <section
       id="story" // Added section ID for hash-based anchor navigation

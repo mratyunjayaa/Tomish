@@ -1,4 +1,4 @@
-export function Button({
+export default function Button({
   children,
   href,
   variant = "primary",

@@ -1,6 +1,6 @@
 import { MapPin, Mail, Phone } from "lucide-react";
 
-export function TopBar() {
+export default function TopBar() {
   return (
     <div className="hidden border-b border-slate-700/50 bg-[#0B2246] px-4 py-2 text-xs text-white md:block">
       <div className="mx-auto flex max-w-5xl items-center justify-between">

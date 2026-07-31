@@ -1,7 +1,7 @@
 // src/components/StatsBar.jsx
 import { Building2, Bot, Globe2, MapPin } from "lucide-react";
 
-export function StatsBar() {
+export default function StatsBar() {
   const stats = [
     {
       icon: Building2,

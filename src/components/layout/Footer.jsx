@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { FaInstagram, FaLinkedin, FaFacebookF } from "react-icons/fa6";
 
-export function Footer() {
+export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

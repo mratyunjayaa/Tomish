@@ -80,7 +80,7 @@ const validateForm = (data) => {
   return null;
 };
 
-export function ContactForm() {
+export default function ContactForm() {
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
   const [status, setStatus] = useState(INITIAL_STATUS_STATE);
 

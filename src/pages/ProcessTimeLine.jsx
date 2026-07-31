@@ -63,7 +63,7 @@ const stepsData = [
   },
 ];
 
-export function ProcessTimeline() {
+export default function ProcessTimeline() {
   const [hoveredId, setHoveredId] = useState(null);
 
   return (

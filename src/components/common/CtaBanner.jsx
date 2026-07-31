@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { MessageCircle, Calendar, ArrowRight, Sparkles } from "lucide-react";
 
-export function CtaBanner() {
+export default function CtaBanner() {
   const whatsappNumber = "9478070741";
   const whatsappMessage = encodeURIComponent(
     "Hello! I am interested in partnering with your STEM education programs."

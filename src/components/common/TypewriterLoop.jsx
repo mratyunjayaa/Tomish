@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 
-export function TypewriterLoop({
+export default function TypewriterLoop({
   words = ["React 19", "Tailwind v4", "Motion Animations", "Vite Build"],
   typeSpeed = 100,
   deleteSpeed = 50,

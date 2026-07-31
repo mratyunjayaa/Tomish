@@ -1,6 +1,6 @@
 import { ShoppingCart } from "lucide-react";
 
-export function CartIcon({ count = 0 }) {
+export default function CartIcon({ count = 0 }) {
   return (
     <button
       type="button"

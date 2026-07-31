@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import { Star, Quote, ArrowLeft, ArrowRight } from "lucide-react";
 import { testimonialsData } from "../constants/testimonialsData";
 
-export function TestimonialsSection() {
+
+export default function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const totalItems = testimonialsData.length;

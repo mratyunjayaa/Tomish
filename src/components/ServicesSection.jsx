@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, CheckCircle2, ArrowUpRight } from "lucide-react";
 import { SERVICES_DATA } from "../constants/services";
-import { CtaBanner } from "./common/CtaBanner";
+import  CtaBanner  from "./common/CtaBanner";
 
 // Spotlight Glassmorphism Card Wrapper
 function ModernSpotlightCard({ children, onClick }) {
@@ -69,7 +69,7 @@ const cardVariants = {
   },
 };
 
-export function ServicesSection() {
+export default function ServicesSection() {
   const [selectedService, setSelectedService] = useState(null);
 
   return (

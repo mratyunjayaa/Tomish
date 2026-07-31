@@ -1,4 +1,4 @@
-export function VideoBackground({ videoSrc = "", poster }) {
+export default function VideoBackground({ videoSrc = "", poster }) {
   if (!videoSrc) return null;
 
   return (

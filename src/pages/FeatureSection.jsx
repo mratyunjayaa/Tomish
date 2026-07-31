@@ -34,7 +34,7 @@ function CounterNumber({ value }) {
   );
 }
 
-export function FeatureSection() {
+export default function FeatureSection() {
   return (
     <section className="relative w-full py-16 px-4 sm:px-8 md:px-12 bg-app-bg/10 font-sans overflow-hidden">
       <div className="mx-auto max-w-7xl">

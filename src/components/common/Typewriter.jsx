@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { animate, motion, useMotionValue, useTransform } from "motion/react";
 
-export function Typewriter({
+export default function Typewriter({
   text = "",
   speed = 0.04,
   delay = 0.3,

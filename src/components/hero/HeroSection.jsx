@@ -1,8 +1,8 @@
 // src/components/HeroSection.jsx
-import { Typewriter } from "../common/Typewriter";
-import { VideoBackground } from "./VideoBackground";
+import  Typewriter  from "../common/Typewriter";
+import VideoBackground from "./VideoBackground";
 
-export function HeroSection() {
+export default function HeroSection() {
   const whatsappNumber = "9478070741"; 
   const whatsappMessage = encodeURIComponent(
     "Hello! I am interested in partnering with your STEM education programs."

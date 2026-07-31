@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { BotMessageSquare, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { CartIcon } from "../common/CartIcon";
-import { NavLinks } from "./NavLinks";
+import  CartIcon  from "../common/CartIcon";
+import  {NavLinks}  from "./NavLinks";
 
 const menuVariants = {
   closed: {
@@ -41,7 +41,7 @@ const itemVariants = {
   },
 };
 
-export function MainNavbar() {
+export default function MainNavbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
