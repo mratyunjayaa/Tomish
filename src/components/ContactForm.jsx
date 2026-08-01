@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Send, CheckCircle2, AlertCircle } from "lucide-react";
 
 // Webhook endpoint configuration for easy backend migration
-const SCRIPT_WEBHOOK_URL = import.meta.env.VITE_SCRIPT_WEBHOOK;
+const SCRIPT_WEBHOOK_URL = import.meta.env.VITE_SCRIPT_WEBHOOK || "";
 
 // Static Services List
 const SERVICES_LIST = [
@@ -40,7 +40,7 @@ const sanitizeInput = (input) => {
 
   let sanitized = input.trim();
 
-  // Prevent Excel / CSV Formula Injection (Characters: =, +, -, @, \t, \r)
+  // Prevent Excel / CSV Formula Injection
   if (/^[=+\-@\t\r]/.test(sanitized)) {
     sanitized = `'${sanitized}`;
   }
@@ -65,7 +65,7 @@ const validateForm = (data) => {
     return "Please enter a valid email address.";
   }
 
-  // Indian Phone Number Validation (10 digits starting with 6-9, optional +91 or 0 prefix)
+  // Indian Phone Number Validation
   const phoneClean = phone.replace(/[\s\-()]/g, "");
   const indianPhoneRegex = /^(?:\+91|0)?[6-9]\d{9}$/;
   if (!phoneClean || !indianPhoneRegex.test(phoneClean)) {
@@ -109,7 +109,7 @@ export default function ContactForm() {
   };
 
   /**
-   * Form submission handler using text/plain to bypass CORS preflight checks on Google Apps Script
+   * Form submission handler
    */
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -118,6 +118,15 @@ export default function ContactForm() {
     const validationError = validateForm(formData);
     if (validationError) {
       setStatus({ loading: false, success: false, error: validationError });
+      return;
+    }
+
+    if (!SCRIPT_WEBHOOK_URL) {
+      setStatus({
+        loading: false,
+        success: false,
+        error: "Webhook endpoint not configured. Please set VITE_SCRIPT_WEBHOOK environment variable.",
+      });
       return;
     }
 
@@ -155,7 +164,7 @@ export default function ContactForm() {
       setFormData(INITIAL_FORM_STATE);
 
     } catch (err) {
-      if (process.env.NODE_ENV === "development") {
+      if (import.meta.env.DEV) {
         console.error("Submission Error:", err);
       }
 
@@ -174,7 +183,7 @@ export default function ContactForm() {
       <div className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full bg-[var(--color-primary,#0a61af)]/20 blur-[130px] animate-pulse" />
       <div 
         className="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-[var(--color-accent,#4381b0)]/20 blur-[130px] animate-bounce" 
-        style={{ animationDuration: '10s' }}
+        style={{ animationDuration: "10s" }}
       />
 
       {/* Grid Overlay Texture */}

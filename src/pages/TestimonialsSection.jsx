@@ -1,13 +1,26 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Star, Quote, ArrowLeft, ArrowRight } from "lucide-react";
 import { testimonialsData } from "../constants/testimonialsData";
 
-
 export default function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const totalItems = testimonialsData.length;
+  const [itemsPerPage, setItemsPerPage] = useState(1);
+
+  const testimonials = testimonialsData || [];
+  const totalItems = testimonials.length;
+
+  // Track window resize safely for responsive slide steps
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      setItemsPerPage(window.innerWidth >= 768 ? 3 : 1);
+    };
+
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, []);
 
   // Auto-play timer
   useEffect(() => {
@@ -35,10 +48,10 @@ export default function TestimonialsSection() {
       <div className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-[var(--color-primary,#0a61af)]/20 blur-[130px] animate-pulse duration-1000" />
       <div 
         className="pointer-events-none absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-[var(--color-accent,#4381b0)]/20 blur-[130px] animate-bounce"
-        style={{ animationDuration: '9s' }}
+        style={{ animationDuration: "9s" }}
       />
 
-      {/* Grid Pattern Texture to match Footer */}
+      {/* Grid Pattern Texture */}
       <div 
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
@@ -73,10 +86,10 @@ export default function TestimonialsSection() {
             <motion.div
               className="flex transition-transform duration-500 ease-out"
               style={{
-                transform: `translateX(-${currentIndex * (100 / (window.innerWidth >= 768 ? 3 : 1))}%)`,
+                transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
               }}
             >
-              {testimonialsData.map((testimonial, idx) => (
+              {testimonials.map((testimonial, idx) => (
                 <div
                   key={testimonial.id || idx}
                   className="w-full md:w-1/3 shrink-0 px-3 sm:px-4"
@@ -97,7 +110,7 @@ export default function TestimonialsSection() {
                       </div>
 
                       {/* Quote Text */}
-                      <p className="text-xs sm:text-sm italic leading-relaxed text-slate-300 mb-8">
+                      <p className="text-xs sm:text-sm italic leading-relaxed text-slate-300 mb-8 font-sans">
                         "{testimonial.quote}"
                       </p>
                     </div>
@@ -141,7 +154,7 @@ export default function TestimonialsSection() {
           {/* Pagination Indicators / Dots */}
           {totalItems > 1 && (
             <div className="flex items-center justify-center gap-2 mt-5">
-              {testimonialsData.map((_, index) => (
+              {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}

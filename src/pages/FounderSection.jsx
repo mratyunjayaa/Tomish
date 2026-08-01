@@ -1,14 +1,14 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 
 export default function FounderSection() {
   return (
     <section
-      id="story" // Added section ID for hash-based anchor navigation
+      id="story"
       className="relative w-full py-20 px-4 flex items-center justify-center overflow-hidden"
       style={{
-        backgroundColor: "rgba(118, 159, 205, 0.15)", // Tonal tint of --color-app-bg
+        backgroundColor: "rgba(118, 159, 205, 0.15)",
         fontFamily:
           'var(--font-sans, "Hammersmith One", "Plus Jakarta Sans", sans-serif)',
       }}
@@ -38,7 +38,7 @@ export default function FounderSection() {
       >
         {/* Title */}
         <h2
-          className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-4"
+          className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-4 font-serif"
           style={{ color: "var(--color-primary, #0a61af)" }}
         >
           Our Founder's Vision
@@ -50,16 +50,16 @@ export default function FounderSection() {
           took the initiative to ensure they are not left behind in the AI-driven world through quality STEM learning.
         </p>
 
-        {/* Action Link using React Router Link */}
+        {/* Action Link using Standard Smooth Anchor */}
         <motion.div whileHover={{ x: 3 }} className="inline-block">
-          <Link
-            to="#story"
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold transition-colors cursor-pointer"
+          <a
+            href="#story"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold transition-colors cursor-pointer hover:opacity-80"
             style={{ color: "var(--color-accent, #4381b0)" }}
           >
             <span>Read the full story</span>
             <ArrowRight className="h-4 w-4" />
-          </Link>
+          </a>
         </motion.div>
       </motion.div>
     </section>

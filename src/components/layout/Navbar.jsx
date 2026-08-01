@@ -1,10 +1,11 @@
-import TopBar from "./TopBar";
-import  MainNavbar  from "./MainNavbar";
+import React from "react";
+import Topbar from "./Topbar";
+import MainNavbar from "./MainNavbar";
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full font-sans">
-      <TopBar />
+      <Topbar />
       <MainNavbar />
     </header>
   );

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -211,6 +211,7 @@ export default function ProcessTimeline() {
                           <img
                             src={step.image}
                             alt={step.title}
+                            loading="lazy"
                             className={`h-full w-full object-cover transition-transform duration-500 ${
                               isHovered ? "scale-110" : "scale-100"
                             }`}
@@ -228,7 +229,7 @@ export default function ProcessTimeline() {
                         {/* Title & Description */}
                         <div className="flex-1 min-w-0">
                           <h3
-                            className="text-xs sm:text-sm font-bold transition-colors duration-200 leading-tight"
+                            className="text-xs sm:text-sm font-bold transition-colors duration-200 leading-tight font-serif"
                             style={{
                               color: isHovered ? "var(--color-primary, #0a61af)" : "var(--color-accent, #4381b0)"
                             }}

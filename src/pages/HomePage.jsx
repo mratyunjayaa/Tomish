@@ -1,21 +1,24 @@
+import React from "react";
 import HeroSection from "../components/hero/HeroSection";
-import StatsBar  from "./StateBar" 
-import  ProcessTimeline  from "./ProcessTimeline"
-import FounderSection  from "./FounderSection";
+import StateBar from "./StateBar";
+import ServicesSection from "../components/ServicesSection";
+import FounderSection from "./FounderSection";
 import FeatureSection from "./FeatureSection";
-import  TestimonialsSection  from "./TestimonialsSection";
-import CtaBanner  from "../components/common/CtaBanner";
+import ProcessTimeline from "./ProcessTimeline";
+import TestimonialsSection from "./TestimonialsSection";
+import ContactForm from "../components/ContactForm";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col w-full">
       <HeroSection />
-      <StatsBar />
+      <StateBar />
+      <ServicesSection />
       <FounderSection />
       <FeatureSection />
-      <CtaBanner />
       <ProcessTimeline />
       <TestimonialsSection />
+      <ContactForm />
     </div>
   );
 }

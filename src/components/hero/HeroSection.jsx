@@ -1,5 +1,6 @@
-// src/components/HeroSection.jsx
-import  Typewriter  from "../common/Typewriter";
+import React from "react";
+import { Link } from "react-router-dom";
+import Typewriter from "../common/Typewriter";
 import VideoBackground from "./VideoBackground";
 
 export default function HeroSection() {
@@ -38,12 +39,13 @@ export default function HeroSection() {
 
         {/* Action Buttons */}
         <div className="grid grid-cols-2 sm:flex sm:flex-row items-center gap-3 sm:gap-4 pt-4 font-sans font-semibold">
-          <a
-            href="#programs"
+          {/* Redirects to /services route using Link */}
+          <Link
+            to="/services"
             className="w-full sm:w-auto px-3 sm:px-8 py-3 bg-accent hover:opacity-90 text-white text-center rounded-2xl shadow-lg transition text-xs sm:text-base flex items-center justify-center active:scale-95"
           >
             Explore Programs
-          </a>
+          </Link>
 
           <a
             href={whatsappUrl}

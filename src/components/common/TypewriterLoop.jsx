@@ -1,5 +1,5 @@
-import { motion } from "motion/react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function TypewriterLoop({
   words = ["React 19", "Tailwind v4", "Motion Animations", "Vite Build"],
@@ -12,7 +12,7 @@ export default function TypewriterLoop({
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const fullWord = words[currentWordIndex];
+    const fullWord = words[currentWordIndex] || "";
 
     const handleTyping = () => {
       if (!isDeleting) {

@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { BotMessageSquare, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
-import  CartIcon  from "../common/CartIcon";
-import  {NavLinks}  from "./NavLinks";
+import CartIcon from "../common/CartIcon";
+import  NavLinks  from "./NavLinks";
 
 const menuVariants = {
   closed: {
