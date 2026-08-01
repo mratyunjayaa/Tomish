@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { 
   BotMessageSquare, 
   Mail, 
@@ -23,7 +24,7 @@ export default function Footer() {
       <div className="pointer-events-none absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-[var(--color-primary,#0a61af)]/15 blur-[140px] animate-pulse duration-1000" />
       <div 
         className="pointer-events-none absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-[var(--color-accent,#4381b0)]/15 blur-[140px] animate-bounce" 
-        style={{ animationDuration: '10s' }}
+        style={{ animationDuration: "10s" }}
       />
       
       {/* Background Grid Pattern Overlay */}
@@ -60,11 +61,11 @@ export default function Footer() {
             </div>
 
             {/* Description */}
-            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm pt-1">
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm pt-1 font-sans">
               Empowering the next generation of creators, thinkers, and innovators through practical hands-on STEM, AI, and Robotics education.
             </p>
 
-            {/* Social Media Pill Buttons using react-icons/fa6 */}
+            {/* Social Media Pill Buttons */}
             <div className="flex items-center gap-3 pt-3">
               {[
                 { icon: FaInstagram, href: "#", label: "Instagram" },
@@ -75,7 +76,7 @@ export default function Footer() {
                   key={idx}
                   href={social.href}
                   aria-label={social.label}
-                  className="p-2.5 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-300 hover:text-white hover:bg-[var(--color-primary,#0a61af)] hover:border-[var(--color-primary,#0a61af)] transition-all duration-300 active:scale-95 shadow-sm flex items-center justify-center"
+                  className="p-2.5 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-300 hover:text-white hover:bg-[var(--color-primary,#0a61af)] hover:border-[var(--color-primary,#0a61af)] transition-all duration-300 active:scale-95 shadow-xs flex items-center justify-center"
                 >
                   <social.icon className="w-4 h-4" />
                 </a>
@@ -88,7 +89,7 @@ export default function Footer() {
             <h3 className="text-sm font-bold tracking-wider text-white font-mono uppercase underline decoration-[var(--color-primary,#0a61af)] underline-offset-8 decoration-2">
               Learning Programs
             </h3>
-            <ul className="space-y-3 text-xs sm:text-sm text-slate-400 pt-1">
+            <ul className="space-y-3 text-xs sm:text-sm text-slate-400 pt-1 font-sans">
               {[
                 "AI & Machine Learning",
                 "Robotics & Automation (Class 1-8)",
@@ -97,12 +98,12 @@ export default function Footer() {
                 "STEM Innovation (Class 9-12)",
               ].map((item, index) => (
                 <li key={index}>
-                  <a 
-                    href="#programs" 
+                  <Link 
+                    to="/services" 
                     className="hover:text-white transition-colors block py-0.5"
                   >
                     {item}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -113,21 +114,21 @@ export default function Footer() {
             <h3 className="text-sm font-bold tracking-wider text-white font-mono uppercase underline decoration-[var(--color-primary,#0a61af)] underline-offset-8 decoration-2">
               Quick Links
             </h3>
-            <ul className="space-y-3 text-xs sm:text-sm text-slate-400 pt-1">
+            <ul className="space-y-3 text-xs sm:text-sm text-slate-400 pt-1 font-sans">
               {[
-                { label: "About Us", href: "#about" },
-                { label: "Terms & Conditions", href: "#terms" },
-                { label: "Privacy Policy", href: "#privacy" },
-                { label: "Refund Policy", href: "#refund" },
-                { label: "Contact Us", href: "#contact" },
+                { label: "About Us", path: "/about" },
+                { label: "Terms & Conditions", path: "/news" },
+                { label: "Privacy Policy", path: "/news" },
+                { label: "Refund Policy", path: "/news" },
+                { label: "Contact Us", path: "/contact" },
               ].map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href} 
+                  <Link 
+                    to={link.path} 
                     className="hover:text-white transition-colors block py-0.5"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -139,7 +140,7 @@ export default function Footer() {
               Get In Touch
             </h3>
             
-            <div className="space-y-3 text-xs sm:text-sm text-slate-300 pt-1">
+            <div className="space-y-3 text-xs sm:text-sm text-slate-300 pt-1 font-sans">
               <a 
                 href="mailto:info@tomish.in" 
                 className="flex items-center gap-3 hover:text-[var(--color-secondary,#b9d7ea)] transition-colors"
@@ -160,12 +161,12 @@ export default function Footer() {
 
               <div className="flex items-start gap-3 text-slate-300">
                 <MapPin className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
-                <span>Punjab - 140001, India</span>
+                <span>Lucknow - 226010, Uttar Pradesh, India</span>
               </div>
             </div>
 
             {/* Working Hours Card Container */}
-            <div className="mt-4 p-4 rounded-xl bg-slate-800/40 border border-slate-700/50 space-y-2">
+            <div className="mt-4 p-4 rounded-xl bg-slate-800/40 border border-slate-700/50 space-y-2 font-sans">
               <div className="flex items-center gap-2 text-xs font-semibold text-white">
                 <Clock className="w-4 h-4 text-[var(--color-secondary,#b9d7ea)]" />
                 <span>Working Hours</span>
@@ -182,7 +183,7 @@ export default function Footer() {
         </div>
 
         {/* --- COPYRIGHT & SCROLL TO TOP ROW --- */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-sans">
           <p className="text-center sm:text-left">
             © {new Date().getFullYear()} <span className="text-slate-200">Tomish Solution Pvt. Ltd.</span> All rights reserved.
           </p>
@@ -190,7 +191,7 @@ export default function Footer() {
           <button
             onClick={scrollToTop}
             aria-label="Scroll to top"
-            className="p-3.5 rounded-full bg-[var(--color-primary,#0a61af)] hover:bg-blue-600 text-white shadow-lg shadow-blue-900/40 transition-all duration-300 active:scale-90"
+            className="p-3.5 rounded-full bg-[var(--color-primary,#0a61af)] hover:bg-blue-600 text-white shadow-lg shadow-blue-900/40 transition-all duration-300 active:scale-90 cursor-pointer"
           >
             <ArrowUp className="w-4 h-4" />
           </button>
