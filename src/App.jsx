@@ -7,6 +7,7 @@ import FounderSection from "./pages/FounderSection";
 import FeatureSection from "./pages/FeatureSection";
 import ServicesSection from "./components/ServicesSection";
 import ContactForm from "./components/ContactForm";
+import Lightfall from "./components/common/Lightfall";
 
 export default function App() {
   return (
